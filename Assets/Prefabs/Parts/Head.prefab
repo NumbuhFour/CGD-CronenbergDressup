@@ -55,11 +55,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 436280}
-  - 61: {fileID: 6122480}
   - 50: {fileID: 5050700}
   - 231: {fileID: 23139656}
-  - 114: {fileID: 11493992}
   - 232: {fileID: 23215776}
+  - 114: {fileID: 11493992}
+  - 257: {fileID: 25778548}
   m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
@@ -193,20 +193,6 @@ PolygonCollider2D:
       - {x: 0.24000001, y: -0.298}
       - {x: 0.252, y: -0.26200002}
       - {x: 0.256, y: -0.022000002}
---- !u!61 &6122480
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186826}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 0.01, y: 0.01}
 --- !u!114 &11493992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,6 +207,7 @@ MonoBehaviour:
   startNode: 0
   type: 0
   maxDistance: {fileID: 23215776}
+  mouseJoint: {fileID: 25778548}
   dragLayer: dragging
   grabDistance: 0.3
 --- !u!212 &21203052
@@ -247,7 +234,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -737429247
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 141832243b1f396469370ae5d430a1d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -259,7 +246,7 @@ SpringJoint2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186826}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 0}
@@ -269,8 +256,8 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.005
-  m_DampingRatio: 0.15
+  m_Distance: 0.05
+  m_DampingRatio: 0.8
   m_Frequency: 1
 --- !u!232 &23215776
 DistanceJoint2D:
@@ -290,6 +277,24 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 0
   m_Distance: 0.15
   m_MaxDistanceOnly: 1
+--- !u!257 &25778548
+TargetJoint2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186826}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_Anchor: {x: 0, y: 0}
+  m_Target: {x: 0.062, y: 5.27}
+  m_AutoConfigureTarget: 1
+  m_MaxForce: 10000
+  m_DampingRatio: 1
+  m_Frequency: 5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -299,11 +304,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Distance
-      value: 0.15
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_DampingRatio
-      value: 0.15
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_GravityScale
@@ -320,6 +325,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: dragLayer
       value: dragging
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Frequency
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mouseJoint
+      value: 
+      objectReference: {fileID: 25778548}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: -737429247
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
