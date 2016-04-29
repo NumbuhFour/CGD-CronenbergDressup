@@ -287,6 +287,7 @@ MonoBehaviour:
   - {fileID: 186826, guid: c311e99a94858274b8b8628c3d28f733, type: 2}
   - {fileID: 108596, guid: 65d2b27790ebfd04a893799fed1a9299, type: 2}
   - {fileID: 108596, guid: 541fa91edfea4754f9c601e013eb70c4, type: 2}
+  - {fileID: 108596, guid: f3b3afd36ee02a24da9c55c2482420e2, type: 2}
   container: {fileID: 2062776924}
   spawnRange: 3
   spawnChance: 0.03
