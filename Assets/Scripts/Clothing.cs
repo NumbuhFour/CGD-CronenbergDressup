@@ -11,6 +11,7 @@ public class Clothing : MonoBehaviour {
 
 	[SerializeField]
 	public BodyPartTypes type;
+	public int setID = -1;
 
 	private bool connected = false;
 
@@ -22,6 +23,11 @@ public class Clothing : MonoBehaviour {
 
 	[SerializeField]
 	private float grabDistance = 0.3f;
+
+	private GameObject spawner; 
+	public void SetHolder(GameObject spawner) {
+		this.spawner = spawner;
+	}
 
 	void Awake()
 	{
@@ -42,6 +48,10 @@ public class Clothing : MonoBehaviour {
 	void OnMouseDown()
 	{
 		if (!connected) {
+			if (this.spawner) {
+				this.spawner.SendMessage ("Release");
+				this.spawner = null;
+			}
 			mouseJoint.enabled = true;
 			Vector2 cursorPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);//getting cursor position
 			mouseJoint.target = cursorPosition;

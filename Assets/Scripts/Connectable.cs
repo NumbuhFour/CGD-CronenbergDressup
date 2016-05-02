@@ -40,6 +40,11 @@ public class Connectable : MonoBehaviour {
 	[SerializeField]
 	private float grabDistance = 0.3f;
 
+	private GameObject spawner; 
+	public void SetHolder(GameObject spawner) {
+		this.spawner = spawner;
+	}
+
 	// Use this for initialization
 	void Start () {
 
@@ -108,6 +113,10 @@ public class Connectable : MonoBehaviour {
 	void OnMouseDown()
 	{
 		if (!connected && !startNode) {
+			if (this.spawner) {
+				this.spawner.SendMessage ("Release");
+				this.spawner = null;
+			}
 			SetLayerRecursively (this.transform, dragLayerID);
 			mouseJoint.enabled = true;
 			Vector2 cursorPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);//getting cursor position
