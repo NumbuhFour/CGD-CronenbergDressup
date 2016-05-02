@@ -9,6 +9,7 @@ public class World : MonoBehaviour {
 	private GameObject bodyContainer;
 
 	private List<GameObject> connections = new List<GameObject>();
+	private List<GameObject> clothingConnections = new List<GameObject>();
 
 	[SerializeField]
 	private string layer;
@@ -33,20 +34,31 @@ public class World : MonoBehaviour {
 			if (t.name == "_cnb") {
 				GameObject c = t.gameObject;
 				connections.Add (c);
+			} else if (t.name == "_cnc") {
+				clothingConnections.Add (t.gameObject);
 			}
 		}
+		this.CleanConnections ();
+	}
 
+	public void CleanConnections() {
 		List<GameObject> rem = new List<GameObject> ();
+		List<GameObject> crem = new List<GameObject> ();
 
 		foreach (GameObject c in connections) {
-			if (c.name != "_cnb")
+			if (c.name == "_cnbx")
 				rem.Add (c);
+			if (c.name == "_cncx")
+				crem.Add (c);
 		}
 		foreach (GameObject r in rem)
 			connections.Remove (r);
+		foreach (GameObject r in crem)
+			clothingConnections.Remove (r);
 	}
 
 	public List<GameObject> Connections { get { return connections; } }
+	public List<GameObject> Clothes { get { return clothingConnections; } }
 
 	// Use this for initialization
 	void Start () {
