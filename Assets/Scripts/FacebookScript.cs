@@ -55,6 +55,11 @@ public class FacebookScript : MonoBehaviour {
         FB.API("me/photos", HttpMethod.POST, APICallback, wwwForm);
     }
 
+    public void PostScreenshot()
+    {
+        StartCoroutine(TakeScreenshot());
+    }
+
     private void APICallback(IGraphResult result)
     {
         if (FB.IsLoggedIn)
