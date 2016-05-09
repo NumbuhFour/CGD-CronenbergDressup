@@ -24,7 +24,7 @@ public class Spawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Random.Range (0.0f, 1.0f) < spawnChance) {
+		if (Random.Range (0.0f, 1.0f) < spawnChance && !Globals.Instance.GamePaused) {
 			Spawn ();
 		}
 	}
