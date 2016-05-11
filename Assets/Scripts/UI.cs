@@ -2,13 +2,15 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Facebook.Unity;
+using System.Collections.Generic;
 
 public class UI : MonoBehaviour {
     //Different menu pages
     public GameObject main;
     public GameObject howTo;
     public GameObject options;
-
+	
     //Methods for changing scenes
     public void StartB()
     {
