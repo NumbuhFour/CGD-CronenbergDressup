@@ -1504,6 +1504,7 @@ Transform:
   m_Children:
   - {fileID: 348036144}
   - {fileID: 590714887}
+  - {fileID: 1331464412}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &1288746438
@@ -1520,6 +1521,7 @@ MonoBehaviour:
   gametime: 90
   ui: {fileID: 1331464416}
   gameoverUI: {fileID: 1936329850}
+  world: {fileID: 819358524}
 --- !u!114 &1288746439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1563,7 +1565,7 @@ RectTransform:
   - {fileID: 453100942}
   - {fileID: 1936329851}
   m_Father: {fileID: 1288746437}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

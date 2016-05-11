@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  setID: 0
   mouseJoint: {fileID: 25790908}
   grabDistance: 1
 --- !u!212 &21200028
@@ -305,6 +306,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
       value: 1653300693
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: setID
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
