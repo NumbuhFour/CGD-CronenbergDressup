@@ -42,9 +42,9 @@ public class FacebookScript : MonoBehaviour {
     {
         yield return new WaitForEndOfFrame();
 
-        var width = Screen.width;
-        var height = Screen.height;
-        var tex = new Texture2D(width, height, TextureFormat.RGB24, false);
+        int width = Screen.width;
+        int height = Screen.height;
+        Texture2D tex = new Texture2D(width, height, TextureFormat.RGB24, false);
         // Read screen contents into the texture
         tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
         tex.Apply();
@@ -59,6 +59,25 @@ public class FacebookScript : MonoBehaviour {
     {
         StartCoroutine(TakeScreenshot());
     }
+
+    private void ShareCallback(IShareResult result)
+    {
+        if (result.Cancelled || !string.IsNullOrEmpty(result.Error))
+        {
+            Debug.Log("ShareLink Error: " + result.Error);
+        }
+        else if (!string.IsNullOrEmpty(result.PostId))
+        {
+            // Print post identifier of the shared content
+            Debug.Log(result.PostId);
+        }
+        else
+        {
+            // Share succeeded without postID
+            Debug.Log("ShareLink success!");
+        }
+    }
+
 
     private void APICallback(IGraphResult result)
     {
