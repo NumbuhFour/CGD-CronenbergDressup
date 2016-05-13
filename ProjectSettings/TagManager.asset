@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 67001073
+    locked: 0
   - name: parts
     uniqueID: 3557538049
     locked: 0

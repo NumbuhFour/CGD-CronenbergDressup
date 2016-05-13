@@ -96,14 +96,25 @@ public class World : MonoBehaviour {
 		switch (clothing.setID) {
 		case 0:
 		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
 			return 100; // Solid clothes
 		case 10:
 			return 150; // Stripes
 		case 20:
 			return 200; // Dots
 		case 30:
+		case 31:
+		case 32:
+		case 33:
+		case 34:
+		case 35:
 			return 300; // Uniforms
 		case 40:
+		case 41:
+		case 42:
 			return 500; // Special
 		default:
 			return 100;
