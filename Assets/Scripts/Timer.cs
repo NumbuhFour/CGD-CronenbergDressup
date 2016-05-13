@@ -12,6 +12,9 @@ public class Timer : MonoBehaviour {
 	[SerializeField]
 	private GameObject gameoverUI;
 
+	[SerializeField]
+	private World world;
+
 	// Use this for initialization
 	void Start () {
 		ui.SetMaxTime (gametime);
@@ -29,5 +32,7 @@ public class Timer : MonoBehaviour {
 		}
 
 		ui.SetTimeRemaining (gametime);
+
+		ui.SetScore (world.Score);
 	}
 }

@@ -11,6 +11,9 @@ public class World : MonoBehaviour {
 	private List<GameObject> connections = new List<GameObject>();
 	private List<GameObject> clothingConnections = new List<GameObject>();
 
+	private int score = 0;
+	public int Score { get { return score; } }
+
 	[SerializeField]
 	private string layer;
 
@@ -39,6 +42,7 @@ public class World : MonoBehaviour {
 			}
 		}
 		this.CleanConnections ();
+
 	}
 
 	public void CleanConnections() {
@@ -67,6 +71,42 @@ public class World : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		score = (int)CalcScore ();
+	}
+
+	public float CalcScore() {
+		return CalcScore_rec(startNode.GetComponent<Connectable>(), null);
+	}
+
+	private float CalcScore_rec(Connectable conn, Clothing parentClothing) {
+		Clothing myClothing = conn.Clothing;
+		float myScore = GetScore(myClothing);
+		bool multiply = (parentClothing != null && myClothing != null && parentClothing.setID == myClothing.setID);
+		float childScore = 0.0f;
+		foreach (Connectable child in conn.Children) {
+			multiply |= (child.Clothing != null && myClothing != null && child.Clothing.setID == myClothing.setID);
+			childScore += CalcScore_rec (child, myClothing);
+		}
+		return childScore + myScore * (multiply ? 2.0f : 1.0f);
+	}
+
+	private float GetScore(Clothing clothing) {
+		if (clothing == null)
+			return 0;
+		switch (clothing.setID) {
+		case 0:
+		case 1:
+			return 100; // Solid clothes
+		case 10:
+			return 150; // Stripes
+		case 20:
+			return 200; // Dots
+		case 30:
+			return 300; // Uniforms
+		case 40:
+			return 500; // Special
+		default:
+			return 100;
+		}
 	}
 }

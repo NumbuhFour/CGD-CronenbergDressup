@@ -15,6 +15,7 @@ public class Connectable : MonoBehaviour {
 	[SerializeField]
 	public BodyPartTypes type;
 	private List<Connectable> children = new List<Connectable> ();
+	public List<Connectable> Children { get { return children; } }
 
 	[SerializeField]
 	private DistanceJoint2D maxDistance;
@@ -24,6 +25,7 @@ public class Connectable : MonoBehaviour {
 	private DistanceJoint2D clothesJoint;
 	private GameObject clothesPoint;
 	private GameObject clothing = null;
+	public Clothing Clothing { get { return (clothing != null ? clothing.GetComponent<Clothing> () : null); } }
 	private List<Connection> joints = new List<Connection>();
 
 	[SerializeField]
