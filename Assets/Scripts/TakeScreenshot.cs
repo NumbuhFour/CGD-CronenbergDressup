@@ -15,6 +15,7 @@ public class TakeScreenshot : MonoBehaviour {
         menu.SetActive(false);
         //take screenshot
         Application.CaptureScreenshot(path + "/" + "Screenshot.png");
+		Debug.Log ("PATH " + path);
         menu.SetActive(true);
     }
 }
