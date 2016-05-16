@@ -18,7 +18,7 @@ Platform assembly: D:\Brick\Documents\class\year4\casual\CronenburgPrototype\Bui
 Loading D:\Brick\Documents\class\year4\casual\CronenburgPrototype\Build\pcversion_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: D:\Brick\Documents\class\year4\casual\CronenburgPrototype\Build\pcversion_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading D:\Brick\Documents\class\year4\casual\CronenburgPrototype\Build\pcversion_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.048 seconds
+- Completed reload, in  0.119 seconds
 Platform assembly: D:\Brick\Documents\class\year4\casual\CronenburgPrototype\Build\pcversion_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Brick\Documents\class\year4\casual\CronenburgPrototype\Build\pcversion_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
